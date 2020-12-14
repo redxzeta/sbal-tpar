@@ -12,7 +12,7 @@ export default function Todo() {
           SUBMIT
         </button>
       </form>
-      h
+      <div className="todolist__item">TOW</div>
     </div>
   );
 }

@@ -13,6 +13,9 @@
   padding: 10px 40px;
   text-decoration: none;
   text-shadow: 0px 1px 17px #263666;
+  -webkit-box-shadow: 0px 1px 3px $button-box-shadow;
+  -moz-box-shadow: 0px 1px 3px $button-box-shadow;
+  box-shadow: 0px 1px 3px $button-box-shadow;
 
   &:hover {
     background-image: linear-gradient(
