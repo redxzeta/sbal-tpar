@@ -1,0 +1,19 @@
+.container {
+  max-width: $LG-screenSize;
+  width: 100%;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 25px;
+}
+
+.todo__background {
+  background-image: radial-gradient(
+    circle at 0px 100%,
+    rgba(255, 255, 255, 0),
+    $secondary-main-color 102%
+  );
+  background-color: $primary-main-color;
+  height: 100vh;
+  width: 100vw;
+}

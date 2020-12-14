@@ -1,0 +1,12 @@
+.heading-primary {
+  text-transform: uppercase;
+  color: $primary-main-color;
+  backface-visibility: hidden;
+  margin-bottom: 6rem;
+  text-align: center;
+  &--title {
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+  }
+}
