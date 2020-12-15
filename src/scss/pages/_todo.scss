@@ -46,14 +46,6 @@
 .todolist__container {
   width: 100%;
   padding: 10px;
-  flex: 1 0 auto;
-}
-
-.todolist__parent {
+  flex: 1 0;
   overflow-y: auto;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  min-height: 0px;
-  flex: 1 1 auto;
 }

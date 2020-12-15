@@ -12,6 +12,10 @@ export default function Todo() {
   }, []);
   const [todo, setTodo] = useState("");
   console.log(todo);
+  const onDelete = (id) => {
+    const list = todo.filter((x) => x.id !== id);
+    setTodo(list);
+  };
   return (
     <div className="todo__section">
       <div className="heading-primary">
@@ -24,12 +28,14 @@ export default function Todo() {
         </button>
       </form>
       <div className="todolist__container">
-        <div className="todolist__parent">
-          {todo &&
-            todo.map((task) => (
-              <ToDoListItem key={task.id} title={task.title} />
-            ))}
-        </div>
+        {todo &&
+          todo.map((task) => (
+            <ToDoListItem
+              key={task.id}
+              onDelete={() => onDelete(task.id)}
+              title={task.title}
+            />
+          ))}
       </div>
     </div>
   );
@@ -41,7 +47,7 @@ const ToDoListItem = (props) => (
     <button className="icon--button">
       <PencilIcon className="img--button" size={24} />
     </button>
-    <button className="icon--button">
+    <button className="icon--button" onClick={props.onDelete}>
       <TrashcanIcon className="img--button" size={24} />
     </button>
   </div>
