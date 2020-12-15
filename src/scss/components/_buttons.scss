@@ -30,3 +30,26 @@
     top: 1px;
   }
 }
+
+.icon--button {
+  cursor: pointer;
+  background: none;
+  color: white;
+  width: auto;
+  height: auto;
+  border: none;
+  margin-right: 5px;
+  margin-left: 5px;
+  flex: 0 1;
+  &:hover {
+    color: red;
+  }
+  &:active {
+    position: relative;
+    top: 1px;
+  }
+}
+
+.img--button {
+  margin: 10px;
+}

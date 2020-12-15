@@ -1,4 +1,7 @@
 .todo__section {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .todoList__section {
@@ -9,18 +12,48 @@
 }
 
 .todolist__item {
-  height: 40px;
+  height: 60px;
   width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
   background-image: linear-gradient(
     120deg,
     $secondary-main-color 0%,
     $primary-main-color 100%
   );
-  display: flex;
-  align-items: center;
+  box-shadow: 0px 1px 3px $button-box-shadow;
   border-radius: 25px;
   color: white;
-  padding: 10px;
-  font-size: 30px;
+  padding: 5px 20px;
+  font-size: 2rem;
   font-weight: bold;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  &:hover {
+    background-image: linear-gradient(
+      120deg,
+      $secondary-main-color 0%,
+      $primary-light-color 100%
+    );
+  }
+
+  &--start {
+    flex: 1 0;
+  }
+}
+
+.todolist__container {
+  width: 100%;
+  padding: 10px;
+  flex: 1 0 auto;
+}
+
+.todolist__parent {
+  overflow-y: auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 0px;
+  flex: 1 1 auto;
 }
