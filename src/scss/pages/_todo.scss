@@ -9,6 +9,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  &--error {
+    color: red;
+    margin-bottom: 5px;
+  }
 }
 
 .todolist__item {
@@ -41,6 +45,12 @@
   &--start {
     flex: 1 0;
   }
+
+  input {
+    flex: 1 0;
+    height: 80%;
+    border-radius: 15px;
+  }
 }
 
 .todolist__container {
@@ -48,4 +58,5 @@
   padding: 10px;
   flex: 1 0;
   overflow-y: auto;
+  font-size: 2rem;
 }
