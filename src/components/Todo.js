@@ -11,13 +11,16 @@ const none = {
 };
 export default function Todo() {
   useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/todos")
-      .then((res) => res.json())
-      .then((result) => {
-        setTodo(result);
-        setBackup(result);
-      })
-      .catch((err) => console.log(err));
+    // fetch("https://jsonplaceholder.typicode.com/todos")
+    //   .then((res) => res.json())
+    //   .then((result) => {
+    //     setTodo(result);
+    //     setBackup(result);
+    //   })
+    //   .catch((err) => console.log(err));
+    if (localStorage.getItem("todo")) {
+      setTodo(JSON.parse(localStorage.getItem("todo")));
+    }
   }, []);
   const [todo, setTodo] = useState("");
   const [backup, setBackup] = useState("");
@@ -28,6 +31,7 @@ export default function Todo() {
   const setMainBackup = (list) => {
     setTodo(list);
     setBackup(list);
+    localStorage.setItem("todo", JSON.stringify(todo));
   };
   const onAdd = (e) => {
     e.preventDefault();
@@ -67,10 +71,11 @@ export default function Todo() {
     setTodo(todo.map((task) => (task.id === editTodo.id ? editTodo : task)));
     setEditTodo(none);
   };
+  console.log(localStorage.getItem("todo"));
   return (
-    <div className="todo__section">
+    <Fragment>
       <div className="heading-primary">
-        <span className="heading-primary--title">TODO LIST</span>
+        <span className="heading-primary--title">ToDo List</span>
       </div>
       <form onSubmit={onAdd}>
         <input
@@ -123,7 +128,7 @@ export default function Todo() {
           Search
         </button>
       </form>
-    </div>
+    </Fragment>
   );
 }
 
@@ -178,7 +183,9 @@ const EditTodoMode = ({ title, onSaveEdit, onRemove, onChange, value }) => {
 
 const ViewToDoMode = ({ title, onEdit, onDelete }) => (
   <Fragment>
-    <div className="todolist__item--start">{title} </div>
+    <div className="todolist__item--start">
+      <p>{title}</p>{" "}
+    </div>
     <ToDoListButton onClick={onEdit}>
       <PencilIcon className="img--button" size={24} />
     </ToDoListButton>

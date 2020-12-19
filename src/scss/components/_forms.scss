@@ -6,6 +6,9 @@ form {
   flex: 0 1;
   margin-bottom: 10px;
   margin-top: 10px;
+  &:last-child {
+    margin-bottom: 20px;
+  }
 }
 form input {
   flex: 1 0;
@@ -13,6 +16,7 @@ form input {
   background: white;
   border-color: $secondary-main-color;
   border-radius: 5px;
+  width: 100%;
 }
 
 form button {
@@ -22,4 +26,67 @@ form input,
 form button {
   padding: 0.5rem;
   font-size: 2rem;
+}
+
+.login__form {
+  // height: auto;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  // flex: 0 1;
+  // margin-bottom: 10px;
+  // margin-top: 10px;
+  // input {
+  //   flex: 1 0;
+  //   width: 100%;
+  // }
+  // label {
+  //   display: block;
+  // }  width: 100%;
+  align-items: baseline;
+  flex-direction: column;
+  flex: 1 0;
+  // flex: 1 0;
+  input {
+    flex: 0 1;
+    margin-bottom: 5px;
+    height: auto;
+    padding-left: 24px;
+  }
+  button {
+    margin: 10px auto;
+  }
+  span {
+    color: $error-color;
+    display: block;
+    font-size: 1rem;
+  }
+  label {
+    font-size: 1rem;
+  }
+  // margin-bottom: 20px;
+}
+
+.form-group {
+  margin: 15px 0;
+  width: 100%;
+  position: relative;
+  height: auto;
+
+  &--logo {
+    position: absolute;
+    // bottom: 30%;
+    left: 0px;
+    width: 24px;
+
+    height: 100%;
+  }
+}
+
+.error {
+  margin: 0 auto;
+}
+
+.error--input {
+  border-color: red;
 }

@@ -48,8 +48,49 @@
     position: relative;
     top: 1px;
   }
+
+  @media only screen and (max-width: $XS-screenSize) {
+    svg {
+      width: 12px;
+    }
+  }
 }
 
 .img--button {
   margin: 10px;
+}
+
+.logout--button {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  color: $color-text-button;
+  background-image: linear-gradient(
+    120deg,
+    $primary-light-color 0%,
+    $secondary-dark-color 100%
+  );
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 45px;
+  padding: 10px 40px;
+  text-decoration: none;
+  text-shadow: 0px 1px 17px #263666;
+  -webkit-box-shadow: 0px 1px 3px $button-box-shadow;
+  -moz-box-shadow: 0px 1px 3px $button-box-shadow;
+  box-shadow: 0px 1px 3px $button-box-shadow;
+
+  &:hover {
+    background-image: linear-gradient(
+      120deg,
+      $secondary-dark-color 0%,
+      $primary-light-color 100%
+    );
+    color: $color-text-button;
+  }
+  &:active {
+    position: absolute;
+    top: 7px;
+  }
 }
