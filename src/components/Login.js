@@ -13,7 +13,7 @@ export default function Login({ setAuth }) {
     setErrorState(true);
     setIsFetching(true);
     axios
-      .post("http://dev.rapptrlabs.com/Tests/scripts/user-login.php", formData)
+      .post("url", formData)
       .then((res) => {
         console.log(res.data);
         setAuth(res.data);

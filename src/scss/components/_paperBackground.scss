@@ -5,6 +5,9 @@
   border-radius: $paper-background-radius;
   box-shadow: 2px 2px 10px 0 $box-shadow-color;
   padding: 45px 200px;
+  @media only screen and (min-width: $XS-screenSize) and (max-width: $MD-screenSize) {
+    padding: 25px 20px;
+  }
   @media only screen and (max-width: $XS-screenSize) {
     padding: 25px 20px;
   }

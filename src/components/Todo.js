@@ -11,16 +11,13 @@ const none = {
 };
 export default function Todo() {
   useEffect(() => {
-    // fetch("https://jsonplaceholder.typicode.com/todos")
-    //   .then((res) => res.json())
-    //   .then((result) => {
-    //     setTodo(result);
-    //     setBackup(result);
-    //   })
-    //   .catch((err) => console.log(err));
-    if (localStorage.getItem("todo")) {
-      setTodo(JSON.parse(localStorage.getItem("todo")));
-    }
+    fetch("https://jsonplaceholder.typicode.com/todos")
+      .then((res) => res.json())
+      .then((result) => {
+        setTodo(result);
+        setBackup(result);
+      })
+      .catch((err) => console.log(err));
   }, []);
   const [todo, setTodo] = useState("");
   const [backup, setBackup] = useState("");
@@ -52,12 +49,11 @@ export default function Todo() {
     const list = todo.filter((x) => x.id !== id);
     setMainBackup(list);
   };
-  const setEditForm = (todo) => {
+  const setEditForm = (todo) =>
     setEditTodo(todo.id !== editTodo.id ? todo : none);
-  };
-  const clearEdit = () => {
-    setEditTodo(none);
-  };
+
+  const clearEdit = () => setEditTodo(none);
+
   const onSearch = (e) => {
     e.preventDefault();
     if (search) {
